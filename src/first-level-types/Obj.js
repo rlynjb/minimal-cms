@@ -12,7 +12,7 @@ class Obj extends Component {
   }
   render() {
     let items = React.Children.toArray(this.state.children)
-    console.log(items)
+    console.log('from obj', items)
 
     return (
       <div>

@@ -35,6 +35,9 @@ class App extends Component {
           <String keyName="jkjk" ui="text" />
           <String keyName="jkjkfgfg" ui="textarea" />
         </Obj>
+        <Obj endpoint="/another/end">
+          <String keyName="hello" ui="text" />
+        </Obj>
       </Root>
     );
   }
