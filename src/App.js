@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import { Obj } from './first-level-types/Obj';
-import { String } from './data-types/String';
+import Obj from './first-level-types/Obj';
+import String from './data-types/String';
 
 
 class Root extends Component {

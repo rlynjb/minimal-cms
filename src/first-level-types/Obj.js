@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 class Obj extends Component {
   constructor(props) {
     super(props)
@@ -11,7 +13,6 @@ class Obj extends Component {
   render() {
     let items = React.Children.toArray(this.state.children)
     console.log(items)
-    // form json structure here and handle api post
 
     return (
       <div>
@@ -23,4 +24,4 @@ class Obj extends Component {
   }
 }
 
-export deafult Obj;
+export default Obj;
