@@ -1,28 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+import { Obj } from './first-level-types/Obj';
+import { String } from './data-types/String';
+
+
+class Root extends Component {
+  constructor(props) {
+    super(props)
+    const {children} = this.props
+    
+    this.state = {
+      children
+    }
+  }
+  render() {
+    let firstLevelItems = React.Children.toArray(this.state.children)
+    console.log('first level', firstLevelItems)
+
+    return(
+      <div>
+        {firstLevelItems}
+      </div>
+    )
+  }
+}
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Root>
+        <Obj endpoint="/testend">
+          <String keyName="jkjk" ui="text" />
+          <String keyName="jkjkfgfg" ui="textarea" />
+        </Obj>
+      </Root>
     );
   }
 }
+
 
 export default App;
