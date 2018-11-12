@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 
 class Obj extends Component {
-  constructor(props) {
-    super(props)
-    const {endpoint, children} = this.props
-
-    this.state = {
-      endpoint,
-      children
-    }
+  handleChangeValue = (v) => {
+    console.log(v.target.value)
   }
   render() {
-    let items = React.Children.toArray(this.state.children)
-    console.log('from obj', items)
+    let dataItems = React.Children.map(this.props.children, (child, index) => {
+      return React.cloneElement(child, {
+        index,
+        inputValue: '',
+        handleInputValue: this.handleChangeValue
+      })
+    })
+    
+    console.log('data items', dataItems)
 
     return (
       <div>
-        <h3>{this.state.endpoint}</h3>
-        {items}
+        <h3>{this.props.endpoint}</h3>
+        {dataItems}
         <button>send</button>
       </div>
     )

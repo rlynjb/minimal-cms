@@ -3,11 +3,8 @@ import React, { Component } from 'react';
 class String extends Component {
   constructor(props) {
     super(props)
-    const {keyName, ui} = this.props
 
     this.state = {
-      ui,
-      keyName,
       inputValue: ''
     }
   }
@@ -16,25 +13,25 @@ class String extends Component {
     // use state management or use lift up value to parent
   }
   render() {
-    if (this.state.ui === "text") {
+    if (this.props.ui === "text") {
       return(
         <div className="text-input">
-          <label>{this.state.keyName}</label>
+          <label>{this.props.keyName}</label>
           <input type="text"
             value={this.state.inputValue}
-            onChange={this.handleInputValue}
+            onChange={this.state.handleInputValue}
           />
         </div>
       )
     }
 
-    if (this.state.ui === "textarea") {
+    if (this.props.ui === "textarea") {
       return(
         <div className="textarea-input">
-          <label>{this.state.keyName}</label>
+          <label>{this.props.keyName}</label>
           <textarea row="5"
             value={this.state.inputValue}
-            onChange={this.handleInputValue}
+            onChange={this.state.handleInputValue}
           />
         </div>
       )

@@ -6,16 +6,8 @@ import String from './data-types/String';
 
 
 class Root extends Component {
-  constructor(props) {
-    super(props)
-    const {children} = this.props
-    
-    this.state = {
-      children
-    }
-  }
   render() {
-    let firstLevelItems = React.Children.toArray(this.state.children)
+    let firstLevelItems = React.Children.toArray(this.props.children)
     console.log('first level', firstLevelItems)
 
     return(
@@ -35,6 +27,7 @@ class App extends Component {
           <String keyName="jkjk" ui="text" />
           <String keyName="jkjkfgfg" ui="textarea" />
         </Obj>
+
         <Obj endpoint="/another/end">
           <String keyName="hello" ui="text" />
         </Obj>
