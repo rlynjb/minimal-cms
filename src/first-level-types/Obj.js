@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 class Obj extends Component {
+  static displayName = "object"
+
   handleChangeValue = (v) => {
     console.log(v.target.value)
   }
@@ -13,7 +15,7 @@ class Obj extends Component {
       })
     })
     
-    console.log('data items', dataItems)
+    // console.log('data items', dataItems)
 
     return (
       <div>

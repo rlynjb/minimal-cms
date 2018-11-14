@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 class String extends Component {
+  static displayName = "string"
+
   constructor(props) {
     super(props)
 
@@ -19,7 +21,7 @@ class String extends Component {
           <label>{this.props.keyName}</label>
           <input type="text"
             value={this.state.inputValue}
-            onChange={this.state.handleInputValue}
+            onChange={this.handleInputValue}
           />
         </div>
       )
@@ -31,7 +33,7 @@ class String extends Component {
           <label>{this.props.keyName}</label>
           <textarea row="5"
             value={this.state.inputValue}
-            onChange={this.state.handleInputValue}
+            onChange={this.handleInputValue}
           />
         </div>
       )
