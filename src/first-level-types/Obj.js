@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 
 class Obj extends Component {
   static displayName = "object"
-
-  handleChangeValue = (v) => {
-    console.log(v.target.value)
+  
+  listenForFieldValue() {
+    // form obj structure and send value to store here
   }
+
   render() {
     let dataItems = React.Children.map(this.props.children, (child, index) => {
       return React.cloneElement(child, {
         index,
-        inputValue: '',
-        handleInputValue: this.handleChangeValue
+        inputValue: ''
       })
     })
-    
-    // console.log('data items', dataItems)
 
     return (
       <div>

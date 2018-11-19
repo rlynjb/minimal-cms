@@ -32,7 +32,6 @@ class Root extends Component {
     })
 
     store.dispatch({type: 'CREATE_SCHEMA', payload: schema})
-    console.log(store.getState())
 
     return(
       <div>

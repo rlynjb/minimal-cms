@@ -13,6 +13,11 @@ const reducer = (state = initialState, action) => {
         schema: action.payload
       })
     }
+    case "UPDATE_FIELD_VALUE": {
+      // update value of field using obj keyname and field keyname
+      console.log('fr. store', action)
+      break
+    }
     default: {
       return state
     }
