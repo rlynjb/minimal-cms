@@ -5,13 +5,14 @@ import Obj from './first-level-types/Obj';
 import String from './data-types/String';
 import { store } from './store';
 
-
 class Root extends Component {
   render() {
     let schema = {}
 
     let firstLevelItems = React.Children.map(this.props.children, (item, index) => {
+      // format schema here
       let objectType = {
+        id: index,
         keyName: item.props.keyName,
         endpoint: item.props.endpoint,
         type: item.type.displayName,
@@ -28,7 +29,10 @@ class Root extends Component {
 
       schema[item.props.keyName] = objectType
 
-      return item
+      // populate for render
+      return React.cloneElement(item, {
+        id: index
+      })
     })
 
     store.dispatch({type: 'CREATE_SCHEMA', payload: schema})

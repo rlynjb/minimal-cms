@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { store } from '../store';
 
 class String extends Component {
   static displayName = "string"
@@ -14,16 +13,8 @@ class String extends Component {
 
   handleInputValue = (v) => {
     this.setState({value: v.target.value})
-
-    let val = {
-      obj: '',
-      field: this.props.keyName,
-      value: v.target.value
-    }
-
-    // store.dispatch({type:'UPDATE_FIELD_VALUE', payload: val})
-    // this._reactInternalFiber._debugOwner.type.name
-    console.log('child to parent, by event bus or store or up lift')
+    console.log('value', v.target.value)
+    console.log('props', this.props)
   }
 
   render() {
